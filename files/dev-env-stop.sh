@@ -2,12 +2,12 @@
 
 if [ -d $HOME/utils/traefik ]; then
   cd $HOME/utils/traefik
-  dc down
+  docker-compose down
 fi
 
 if [ -d $HOME/utils/dnsmasq ]; then
   cd $HOME/utils/dnsmasq
-  dc down
+  docker-compose down
 fi
 
 rm -rf $HOME/.dev-env.lock
