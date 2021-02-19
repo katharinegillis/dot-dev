@@ -6,12 +6,12 @@ cd $HOME/utils
 if ls $HOME/utils/traefik 1> /dev/null 2>&1; then
     cd $HOME/utils/traefik
     if [ -f "$HOME/.dev-env.lock" ]; then
-      dc down
+      docker-compose down
     fi
     git pull origin master
     docker-compose pull
     if [ -f "$HOME/.dev-env.lock" ]; then
-      dc up -d
+      docker-compose up -d
     fi
 else
     cd $HOME/utils
@@ -22,12 +22,12 @@ fi
 if ls $HOME/utils/dnsmasq 1> /dev/null 2>&1; then
     cd $HOME/utils/dnsmasq
     if [ -f "$HOME/.dev-env.lock" ]; then
-      dc down
+      docker-compose down
     fi
     git pull origin master
     docker-compose pull
     if [ -f "$HOME/.dev-env.lock" ]; then
-      dc up -d
+      docker-compose up -d
     fi
 else
     cd $HOME/utils
